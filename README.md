@@ -4,4 +4,24 @@ RSA involves a public key and a private key. The public key can be known by ever
 
 RSA algorithm:
 1.At first choose two distinct prime numbers p and q. They must be kept secret.
-2.Compute public key N=p*
+2.Compute public key N=p*q.
+3.Compute the Euler totient function φ(n) = (p − 1)*(q − 1).
+4.Choose e(public key). There are two conditions while choosing e: 1<e<φ(n) and e has to be co-prime with N and φ(n).
+5.Choose d(private key). While choosing d we have to make sure that 1<d<φ(n) and ed = 1 mod φ(n).
+
+Encryption process:
+1.The message will be encrypted character by character.
+2.Assume the positional value of a character is m.
+3.Encryption: c=(m^e) mod N.
+4.Now we have to convert the positional value c to its relevant character.
+5.The character is encrypted.
+
+Decryption process:
+1.The encrypted will be decrypted character by character as before.
+2.Assume the positional value of a character is c.
+3.Decryption: m=(c^d) mod N.
+4.Then convert the positional value m to its relevant character.
+5.The character is decrypted.
+
+In this way the RSA algorithm works.
+
